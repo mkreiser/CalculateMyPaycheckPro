@@ -9,6 +9,8 @@ describe('Run', function() {
 		$location = _$location_;
 		$rootScope = _$rootScope_;
 
+		window.localStorage.setItem('calculate-my-paycheck-pro-federal', 10);
+
 		spyOn($location, 'path');
 	}));
 
@@ -31,6 +33,13 @@ describe('Run', function() {
 			$location.path.and.returnValue('/anything');
 
 			expect($rootScope.checkLocation()).toBeFalsy();
+		});
+	});
+
+	describe('$rootScope.withholdings', function() {
+		it('should get values from localStorage, settings null values to 0', function() {
+			expect($rootScope.withholdings.federal.value).toEqual(10);
+			expect($rootScope.withholdings.state.value).toEqual(0);
 		});
 	});
 });
