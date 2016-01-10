@@ -1,0 +1,6 @@
+<md-card class="padded-card">
+  <md-input-container ng-repeat="item in $root.withholdings" ng-class="{'bottom-input': $last}">
+    <label>{{item.name}} (Percent)</label>
+    <input ng-model="item.value" type="number" min="0">
+  </md-input-container>
+</md-card>

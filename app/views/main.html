@@ -1,0 +1,19 @@
+<md-card class="padded-card">
+  <md-input-container>
+    <label>Hourly rate</label>
+    <input ng-model="rate" type="number" min="0">
+  </md-input-container>
+  <md-input-container class="bottom-input">
+    <label>Hours worked</label>
+    <input ng-model="hours" type="number" min="0">
+  </md-input-container>
+</md-card>
+<md-card class="padded-card text-center">
+  <md-list>
+    <md-list-item>Pay before withholdings:<span flex></span>{{ raw | currency }}</md-list-item>
+    <md-list-item>Tax withholdings:<span flex></span>{{ taxes | currency }}</md-list-item>
+    <md-list-item>Retirement withholdings:<span flex></span> {{retirement | currency }}</md-list-item>
+    <md-list-item>Other withholdings<span flex></span>{{ other | currency }}</md-list-item>
+    <md-list-item>Pay after withholdings:<span flex></span>{{ net | currency }}</md-list-item>
+  </md-list>
+</md-card>
