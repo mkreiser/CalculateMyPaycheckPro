@@ -30,13 +30,12 @@ describe('Controller: mainCtrl', function() {
 	describe('scope.$watch rate, hours', function() {
 		it('should set everything to 0 if raw isNaN', function() {
 			scope.rate = 10;
-			scope.hours = null;
 			scope.$digest();
 
 			expect(scope.raw).toEqual(0);
-			expect(scope.taxes).toEqual(-0);
-			expect(scope.retirement).toEqual(-0);
-			expect(scope.other).toEqual(-0);
+			expect(scope.taxes).toEqual(0);
+			expect(scope.retirement).toEqual(0);
+			expect(scope.other).toEqual(0);
 			expect(scope.net).toEqual(0);
 		});
 
